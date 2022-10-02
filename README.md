@@ -8,4 +8,4 @@ Usage:
 - Run script
 - Check XY Data Manager when done
 
-There was no excessive testing. Usage at own risk.
+There was no excessive testing. Usage at your own risk.
