@@ -1,3 +1,4 @@
+from __future__ import print_function
 from abaqus import *
 from abaqusConstants import *
 from viewerModules import *
@@ -44,9 +45,9 @@ numsteps = len(session.odbs[odbName].steps.keys())
 
 for stepid in range(numsteps):
 	mystep = session.odbs[odbName].steps.keys()[stepid]
-	if session.odbs[odbName].steps[mystep].domain <> TIME:
+	if session.odbs[odbName].steps[mystep].domain != TIME:
 		continue
-	stepcount = stepcount + 1
+	stepcount += 1
 	numframes = len(session.odbs[odbName].steps[mystep].frames)
 
 	#for myframe in session.odbs[odbName].steps[mystep].frames:
@@ -72,8 +73,8 @@ for stepid in range(numsteps):
 
 ######################################################################
 
-if len(listtime) <> len(maxlist):
-	print 'Lists unequal'
+if len(listtime) != len(maxlist):
+	print('Lists unequal')
 
 maxdata = zip(listtime, maxlist)
 mindata = zip(listtime, minlist)
@@ -91,5 +92,5 @@ session.XYData(name=var+' - '+label+' min vs time', data=tuple(mindata),
     sourceDescription='Extracted with script', axis1QuantityType=xQuantity, 
     axis2QuantityType=yQuantity, )
 
-print 'Done'
+print('Done')
 
